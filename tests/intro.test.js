@@ -1,6 +1,7 @@
 import { describe, test, it, expect } from "vitest";
 import { max } from "../src/intro";
 import { fizzBuzz } from "../src/intro";
+import { calculateAverage } from "../src/intro";
 
 describe('max', () => {
     it('should return the first argument if it is greater', () => {
@@ -58,5 +59,24 @@ describe('fizzBuzz', () => {
 describe('fizzBuzz', () => {
     it('should return the value in a string if it is not divisible by 3 &| 5', () => {
         expect(fizzBuzz(2)).toBe('2');
+    })
+});
+
+// TDD (Test Driven Development)
+describe('calculateAverage', () => {
+    it('should return NaN if given an empty array', () => {
+      expect(calculateAverage([])).toBe(NaN);
+    })
+
+    it('should calculate the average of an array with a single element', () => {
+        expect(calculateAverage([1])).toBe(1);
+      })
+
+    it('should calculate the average of an array with two elements', () => {
+        expect(calculateAverage([1, 2])).toBe(1.5);
+    })
+
+    it('should calculate the average of an array with three elements', () => {
+        expect(calculateAverage([1, 2, 3])).toBe(2);
     })
 });
